@@ -7,4 +7,4 @@
 ## Melakukan operasi morfologi erode dan dilation<br>
 ## Menerapkan Gaussian Blur<br>
 ## Melakukan operasi bitwise AND<br> 
-![Skin Segment](/images/skin_segment.png "Skin Segment")
+![Skin Segment](https://github.com/xnorcat/Pengolahan-Citra-Digital/blob/main/Pertemuan%2012/images/skin_segment.png "Skin Segment")
