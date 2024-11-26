@@ -38,6 +38,7 @@ output = image_gray - background_gray
 output[output < 128] = 0
 output[output>=128] = 255
 thresh, output = cv2.threshold(output, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+cv2.imwrite("result_binary_otsu.png", output)
 
 image_processed = np.ma.array(image_lab.copy(), mask = [output,output,output])
 # print image_processed.shape
@@ -49,9 +50,12 @@ output = cv2.inRange(image_lab, mean - 2*std, mean + 2*std)
 
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11, 11))
 skinMask = cv2.erode(output, kernel)
+cv2.imwrite("skin_mask_eroded.png", skinMask)
 skinMask = cv2.dilate(output, kernel)
+cv2.imwrite("skin_mask_dilated.png", skinMask)
 
 skinMask = cv2.GaussianBlur(output, (3, 3), 0)
+cv2.imwrite("skin_mask_gaussian_blur.png", output)
 # skinMask=output
 output = cv2.bitwise_and(image, image, mask=skinMask)
 cv2.imshow("input", image)
@@ -60,4 +64,9 @@ cv2.imshow("output", output)
 cv2.waitKey()
 cv2.destroyAllWindows()
 cv2.imwrite("skin_segment.png", output)
-cv2.imwrite("skin_segment_mask.png", skinMask)
+
+titles = ["image_lab.png", "background_lab.png", "image_gray.png", "background_gray.png", "result_AND.png"]
+images = [image_lab, bg_lab, image_gray, background_gray, output]
+
+for i in range(len(titles)):
+    cv2.imwrite(titles[i], images[i])
