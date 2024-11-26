@@ -7,3 +7,4 @@
 ## Melakukan operasi morfologi erode dan dilation<br>
 ## Menerapkan Gaussian Blur<br>
 ## Melakukan operasi bitwise AND<br> 
+![Skin Segment](/images/skin_segment.png "Skin Segment")
