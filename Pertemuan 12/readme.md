@@ -14,7 +14,7 @@
 
 ## Konversi citra grayscale ke citra hitam putih<br>
 
-![Binary and OTSU](https://github.com/xnorcat/Pengolahan-Citra-Digital/blob/main/Pertemuan%2012/images/skin_binary_otsu.png "Binary and OTSU")
+![Binary and OTSU](https://github.com/xnorcat/Pengolahan-Citra-Digital/blob/main/Pertemuan%2012/images/result_binary_otsu.png "Binary and OTSU")
 
 ## Menghitung mean dan deviasi standar<br>
 ## Structuring element dengan kernel elips<br>
